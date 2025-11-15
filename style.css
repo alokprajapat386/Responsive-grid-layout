@@ -1,0 +1,143 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    background-color: rgb(227, 227, 227);
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    padding: 30px 0;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+}
+p{
+    font-size: 10px;
+}
+.grid{
+    max-height: 90%;
+    aspect-ratio: 1130/887;
+    max-width: 90%;
+    /* background-color:rgb(228, 228, 228); */
+    display:grid;
+    grid-auto-flow: dense;
+    align-items: stretch;
+    grid-template-rows: 13fr 3fr 7fr 12fr ;
+    grid-template-columns: repeat(4,1fr);
+    gap: min(2vh, 1vw);
+}
+.image-container{
+    flex:1;
+}
+img{
+     max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    /* object-fit: ; */
+    display: block;
+    
+}
+
+.block{
+    min-height: 0;
+    min-width: 0;
+    overflow : hidden;
+    display: flex; 
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 10px;
+    display:flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+    line-height:0.8;
+    gap:5px;
+}
+h1{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+h2{
+    font-size:1.6rem;
+    font-weight: 500;
+}
+h3{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+h4{
+    font-size:1.2rem;
+    font-weight: 600;
+}
+#block1{
+    grid-row:span 2;
+    background-color: hsl(31, 66%, 93%);
+}
+
+#block2{
+    grid-column: span 2;
+    background-color:hsl(256, 67%, 59%);
+    color:white
+}
+#block3{
+    grid-row: span 3;
+    background-color: hsl(254, 88%, 90%);
+}
+#block4{
+    grid-row:span 2;
+    background-color:white;
+}
+#block5{
+    background-color: hsl(39, 100%, 71%);
+    grid-row:span 2;
+}
+#block6{
+    background-color: hsl(39, 100%, 71%);
+    grid-row:span 2;
+}
+#block7{
+    background-color: white;
+    align-items:flex-start;
+}
+#block7 h1{
+    font-size: 2.5rem;
+    align-self: flex-start;
+}
+#block8{
+    background-color:hsl(256, 67%, 59%);
+    flex-direction: row;
+    color:white;
+    grid-column:span 2;
+}
+
+@media (max-width:550px){
+    body{
+        height: auto;
+    }
+    .grid{
+        height: auto;
+        max-width: none;
+        width: 80%;
+        grid-template-columns: auto;
+        grid-template-rows: none;
+        grid-auto-rows:auto;
+        gap: 15px;
+    }
+    
+    #block1, #block2,#block3,#block4,#block5,#block6,#block7,#block8{
+        grid-column: auto;
+        grid-row:auto;
+    }
+    #block8{
+        flex-direction:column;
+    }
+    img{
+        /* max-height:150px; */
+    }
+}
